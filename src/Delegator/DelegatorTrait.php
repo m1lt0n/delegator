@@ -15,7 +15,7 @@ trait DelegatorTrait
     /**
      * Check if the inexistent method is found in a delegate and invoke it
      * there.
-     * 
+     *
      * @param  string $method the method
      * @param  array $args    the arguments passed
      * @return mixed          anything the method will return

@@ -15,7 +15,7 @@ interface DelegatorInterface
      *
      * If the delegateMap returns [ 'person' => ['name', 'age'] ]
      * the method name() will be delegated to the object's person property.
-     * 
+     *
      * @return array the mapping of delegates to methods
      */
     public function delegateMap();
