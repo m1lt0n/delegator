@@ -54,7 +54,7 @@ class Address
 $address = new Address('Percy str.', 9, 'London');
 $me = new Person($address);
 
-echo $me->fullAddress
+echo $me->fullAddress();
 
 // this is equivalent to $me->address->fullAddress, but we have simplified
 // our API and hide the internals, while ensuring separation of concerns and
