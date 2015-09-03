@@ -62,3 +62,5 @@ echo $me->fullAddress();
 // our API and hide the internals, while ensuring separation of concerns and
 // limited responsibility for each class.
 ```
+
+Note: Several delegates can be assigned in the mapping.
