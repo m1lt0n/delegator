@@ -1,0 +1,29 @@
+{
+    "name": "m1lt0n/delegator",
+    "type": "library",
+    "description": "Simple Delegator for PHP 5.4+",
+    "keywords": ["delegation", "decoration"],
+    "homepage": "https://github.com/m1lt0n/delegator",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Pantelis Vratsalis",
+            "email": "pvratsalis@gmail.com",
+            "homepage": "http://sitebysite.gr",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "autoload": {
+        "psr-4": {"": "src/"}
+    },
+    "require-dev": {
+        "phpspec/phpspec": "~2.0",
+        "squizlabs/php_codesniffer": "*"
+    },
+    "config": {
+        "bin-dir": "bin"
+    }
+}
