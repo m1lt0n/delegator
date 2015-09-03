@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/m1lt0n/delegator.svg)](https://travis-ci.org/m1lt0n/delegator)
+
 # Delegator
 A simple delegation mechanism for objects.
 
