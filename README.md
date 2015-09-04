@@ -23,6 +23,7 @@ class Person implements DelegatorInterface
     {
         return [
             'address' => [ 'fullAddress' ],
+            'settings' => static::ANY,
         ];
     }
 
@@ -51,12 +52,27 @@ class Address
     }
 }
 
+class Settings
+{
+    public function all()
+    {
+        return 'all settings';
+    }
+
+    public function something()
+    {
+        return 'some setting';
+    }
+}
+
 // Simply by using the DelegatorTrait and implementing the delegateMap method,
 // we can now delegate calls to the mapped delegates.
 $address = new Address('Percy str.', 9, 'London');
-$me = new Person($address);
+$settings = new Settings();
+$me = new Person($address, $settings);
 
-echo $me->fullAddress();
+echo $me->fullAddress(); // this will be delegated to $me->address->fullAddress();
+echo $me->all(); // this will be delegated to $me->settings->all();
 
 // this is equivalent to $me->address->fullAddress, but we have simplified
 // our API and hide the internals, while ensuring separation of concerns and

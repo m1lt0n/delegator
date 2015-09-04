@@ -14,11 +14,13 @@ class Person implements DelegatorInterface
     {
         return [
             'address' => [ 'fullAddress' ],
+            'settings' => static::ANY,
         ];
     }
 
-    public function __construct(Address $address)
+    public function __construct(Address $address, Settings $settings)
     {
         $this->address = $address;
+        $this->settings = $settings;
     }
 }

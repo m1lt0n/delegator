@@ -23,12 +23,25 @@ trait DelegatorTrait
      */
     public function __call($method, $args)
     {
+        $match = null;
+
         foreach ($this->delegateMap() as $delegate => $methods) {
-            if (method_exists($this->{$delegate}, $method)) {
-                return call_user_func([$this->{$delegate}, $method], $args);
+            // if a delegate has any method, immediately match it
+            if ($methods === static::ANY) {
+                $match = $this->{$delegate};
+                break;
+            }
+
+            if (in_array($method, $methods)) {
+                $match = $this->{$delegate};
+                break;   
             }
         }
 
-        throw new MethodNotFoundException();
+        try {
+            return call_user_func([$match, $method], $args);
+        } catch (\Exception $e) {
+            throw new MethodNotFoundException();
+        }
     }
 }
